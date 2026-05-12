@@ -1,0 +1,102 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Artık tüm butonlar ve metinler bu modern fontla yazılacak */
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #2b1a10; /* Yüklenirken görünecek kahve tonu */
+}
+
+/* Ana Taşıyıcı ve Arka Plan */
+.app-container {
+    height: 100vh;
+    width: 100%;
+    background-image: url('assets/bg-hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5%; /* Logoyu üstten biraz aşağı iter */
+    position: relative;
+    transition: background-image 0.8s ease-in-out;
+}
+
+/* Okunabilirliği artırmak için arka plana hafif siyah bir filtre */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+/* Logo Ayarları */
+.logo-container {
+    z-index: 2;
+    margin-bottom: 240px;
+}
+
+.logo {
+    width: 180px; 
+    height: auto;
+    border-radius: 50%; /* Logonuz dairesel olduğu için köşeleri yuvarlatıyoruz */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Buton Konteyneri */
+.button-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    max-width: 320px;
+}
+
+/* Butonların Temel Tasarımı */
+.menu-btn {
+    background-color: rgba(62, 39, 35, 0.85); /* Koyu kahve tonu, hafif transparan */
+    color: #f5deb3; /* Açık buğday/gold rengi yazı */
+    border: 2px solid #bda57b; /* Gold/bronz çerçeve */
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Yuvarlak köşeli butonlar */
+    cursor: pointer;
+    backdrop-filter: blur(5px); /* Arkasını hafif buzlu gösterir */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* Efektin yumuşak olması için transition (geçiş) ekliyoruz */
+    transition: all 0.3s ease-in-out;
+}
+/* Tıklanma (Click) anı fiziksel efekti */
+.menu-btn:active {
+    transform: scale(0.95); /* Buton tıklanırken çok hafif küçülür */
+}
+
+/* Seçili/Aktif buton durumu */
+.menu-btn.active-btn {
+    background-color: #bda57b; /* Arka plan tamamen gold olur */
+    color: #2b1a10; /* Yazı koyu kahve olur */
+    box-shadow: 0 0 20px rgba(189, 165, 123, 0.6); /* Etrafına ışıklı bir hale ekler */
+}
+
+/* İmleç ile Üstüne Gelindiğinde (Hover Efekti) */
+.menu-btn:hover {
+    background-color: #bda57b; /* Arka planı çerçeve rengi olan gold'a çevir */
+    color: #2b1a10; /* Yazı rengini koyu kahve yap */
+    transform: scale(1.06); /* Butonu %6 oranında hafifçe büyüt */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Gölgeyi belirginleştir */
+    border-color: #f5deb3;
+}
